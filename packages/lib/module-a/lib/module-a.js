@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 export default function testA() {
-  test;
+  test1;
   return {
     lodash: _
   };
