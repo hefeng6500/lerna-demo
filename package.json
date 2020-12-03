@@ -2,12 +2,54 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/lib/*",
+    "packages/app/*"
   ],
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "babel-eslint": "^10.1.0",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "prettier": "^1.19.1",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0"
   },
   "scripts": {
     "build": "lerna run build"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,css}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hefeng6500/lerna-demo.git"
+  },
+  "author": "兰亭古墨",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hefeng6500/lerna-demo/issues"
+  },
+  "homepage": "https://github.com/hefeng6500/lerna-demo/#readme"
 }
