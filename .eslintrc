@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:json/recommended"],
   "env": {
     "browser": true,
     "node": true
@@ -13,6 +13,7 @@
     "no-debugger": "warn",
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "comma-dangle": ["error", "never"],
-    "react/prefer-stateless-function": [0, { "ignorePureComponents": true }]
+    "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+    "linebreak-style": ["error", "windows"]
   }
 }
